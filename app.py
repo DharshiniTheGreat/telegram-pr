@@ -1,10 +1,10 @@
 from telegram.ext import Updater, MessageHandler,Filters
 
 from Adafruit_IO import Client
-import os
+import os 
 
 aio = Client('Priya_Dharshini',os.getenv('Priya_Dharshini'))
-             
+
 def demo1(bot,update):
   chat_id = bot.message.chat_id
   path = 'https://image.shutterstock.com/image-vector/ok-hand-lettering-handmade-calligraphy-260nw-669965602.jpg'
@@ -28,7 +28,7 @@ def demo3(bot,update):
   update.bot.sendPhoto(chat_id=chat_id,photo=path)
 def demo4(bot,update):
   chat_id = bot.message.chat_id
-  path = = 'https://image.shutterstock.com/image-vector/electrical-fan-working-vector-cartoon-260nw-138334766.jpg'
+  path = 'https://image.shutterstock.com/image-vector/electrical-fan-working-vector-cartoon-260nw-138334766.jpg'
   bot.message.reply_text('FAN is turned ON')
   aio.send('fan', 1)
   data2 = aio.receive('fan')
@@ -45,7 +45,7 @@ def demo5(bot,update):
 def main(bot,update):
   a = bot.message.text.lower()
   print(a)
-
+ 
   if a == "how are you?":
     demo1(bot,update)
   elif a =="light on" or a=="turn on light":
